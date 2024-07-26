@@ -1,5 +1,6 @@
 package com.revature.OTL.User;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +10,26 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
      private final UserService userService;
 
+     @Autowired
      UserController(UserService userService){
           this.userService = userService;
+     }
+
+     @GetMapping("/{userId}")
+     private ResponseEntity<User> getUserById(@PathVariable int userId) {
+          return ResponseEntity.ok(userService.findById(userId));
+     }
+
+     @DeleteMapping
+     private ResponseEntity<UserResponseDTO> deleteUser(@Valid @RequestBody User user) {
+          userService.delete(user);
+          return ResponseEntity.noContent().build();
+     }
+
+     @PutMapping
+     private ResponseEntity<UserResponseDTO> putUpdateUser(@Valid @RequestBody User user) {
+          userService.update(user);
+          return ResponseEntity.noContent().build();
      }
 
      /**
