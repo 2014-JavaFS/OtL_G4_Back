@@ -1,5 +1,7 @@
 package com.revature.OTL.User.DTO;
 
+import com.revature.OTL.User.User;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +16,7 @@ public class UserResponseDTO {
      private String email;
 
      public UserResponseDTO(User user) {
-        this.userId = user.getUserId();
+        this.userId = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.email = user.getEmail();
