@@ -1,6 +1,7 @@
 package com.revature.OTL.User.ServiceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,16 @@ public class UserServiceImpl implements UserService{
      @Autowired
      public UserServiceImpl(UserRepo userRepo) {
           this.userRepo = userRepo;
+     }
+
+     @Override
+     public boolean login(String username, String password) {
+          return false;
+     }
+
+     @Override
+     public Optional<User> getUserByUsername(String username) {
+          return null;
      }
 
      @Override

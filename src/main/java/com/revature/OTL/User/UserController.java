@@ -1,5 +1,6 @@
 package com.revature.OTL.User;
 
+import com.revature.OTL.User.DTO.UserResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.OTL.User.ServiceImpl.UserServiceImpl;
 
 import jakarta.validation.Valid;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
