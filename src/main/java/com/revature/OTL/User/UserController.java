@@ -1,16 +1,25 @@
 package com.revature.OTL.User;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.revature.OTL.User.ServiceImpl.UserServiceImpl;
+
+import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 public class UserController {
-     private final UserService userService;
+     private final UserServiceImpl userServiceImpl;
 
-     UserController(UserService userService){
-          this.userService = userService;
+     @Autowired
+     public UserController(UserServiceImpl userServiceImpl){
+          this.userServiceImpl = userServiceImpl;
      }
 
      /**
@@ -18,17 +27,8 @@ public class UserController {
       * @param user
       * @return ResponseEntity object, response status, and response body
       */
-     @PostMapping
-     private ResponseEntity<UserResponseDTO> registerUser(@RequestBody UserResponseDTO  userResponseDTO){
-          //TODO: Add registration method
-          //Validation and encryption logic should be added here
-          User usr = new User(userResponseDTO);
-          User username = new userService.findById(userDTO.getUserId());
-          User email = new userService.findByEmail(userDTO.getEmail());
-          User password = new userService.findByPassword(userDTO.getPassword());
-          usr.setUsername(username);
-          usr.setEmail(email);
-          usr.setPassword(password);
-          return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
+     @PostMapping("/register")
+     private ResponseEntity<User> registerUser(@Valid @RequestBody User newUser){
+          return ResponseEntity.status(HttpStatus.CREATED).body(userServiceImpl.registerUser(newUser));
      }
 }
