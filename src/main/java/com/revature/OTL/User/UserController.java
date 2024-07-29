@@ -15,11 +15,10 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-     private final UserServiceImpl userServiceImpl;
+     private final UserService userService;
 
-     @Autowired
-     public UserController(UserServiceImpl userServiceImpl){
-          this.userServiceImpl = userServiceImpl;
+     UserController(UserService userService){
+          this.userService = userService;
      }
 
      /**
@@ -31,4 +30,36 @@ public class UserController {
      private ResponseEntity<User> registerUser(@Valid @RequestBody User newUser){
           return ResponseEntity.status(HttpStatus.CREATED).body(userServiceImpl.registerUser(newUser));
      }
+     @PostMapping
+     private ResponseEntity<UserResponseDTO> registerUser(@RequestBody UserResponseDTO  userResponseDTO){
+          //TODO: Add registration method
+          //Validation and encryption logic should be added here
+          User usr = new User(userResponseDTO);
+          User username = new userService.findById(userDTO.getUserId());
+          User email = new userService.findByEmail(userDTO.getEmail());
+          User password = new userService.findByPassword(userDTO.getPassword());
+          usr.setUsername(username);
+          usr.setEmail(email);
+          usr.setPassword(password);
+          return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
+     }
+
+     @PostMapping("/login")
+     public ResponseEntity<?> login(@RequestBody Map<String, String> requestBody) {
+          String username = requestBody.get("username");
+          String password = requestBody.get("password");
+
+
+          boolean isLoggedIn = userService.login(username, password);
+          if (isLoggedIn) {
+               // Successful login, return appropriate response
+               return ResponseEntity.ok("Login successful");
+          } else {
+               // Handle failed login, e.g., return error response
+               return ResponseEntity.status(401).body("Invalid credentials");
+          }
+     }
+
+
+}
 }
