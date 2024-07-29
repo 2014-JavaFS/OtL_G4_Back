@@ -8,8 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer> {
-     Optional<User> findByUsernameAndPassword(String username, String password);
-
      @Query("FROM users WHERE b.user.username = :username")
      Optional<User> findByUsername(String username);
      @Query("FROM users WHERE username = :username AND password = :password")
