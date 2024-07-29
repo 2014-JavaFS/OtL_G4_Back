@@ -25,8 +25,8 @@ public class UserController {
      }
 
      /**
-      * 
-      * @param user
+      * g
+      * @param newUser
       * @return ResponseEntity object, response status, and response body
       */
      @PostMapping("/register")
