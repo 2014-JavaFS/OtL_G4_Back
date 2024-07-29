@@ -18,10 +18,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-     private final UserService userService;
+     private final UserServiceImpl userServiceImpl;
 
-     UserController(UserService userService){
-          this.userService = userService;
+     UserController(UserServiceImpl userServiceImpl){
+          this.userServiceImpl = userServiceImpl;
      }
 
      /**
@@ -33,19 +33,6 @@ public class UserController {
      private ResponseEntity<User> registerUser(@Valid @RequestBody User newUser){
           return ResponseEntity.status(HttpStatus.CREATED).body(userServiceImpl.registerUser(newUser));
      }
-     @PostMapping
-     private ResponseEntity<UserResponseDTO> registerUser(@RequestBody UserResponseDTO  userResponseDTO){
-          //TODO: Add registration method
-          //Validation and encryption logic should be added here
-          User usr = new User(userResponseDTO);
-          User username = new userService.findById(userDTO.getUserId());
-          User email = new userService.findByEmail(userDTO.getEmail());
-          User password = new userService.findByPassword(userDTO.getPassword());
-          usr.setUsername(username);
-          usr.setEmail(email);
-          usr.setPassword(password);
-          return ResponseEntity.status(HttpStatus.CREATED).body(userResponseDTO);
-     }
 
      @PostMapping("/login")
      public ResponseEntity<?> login(@RequestBody Map<String, String> requestBody) {
@@ -53,7 +40,7 @@ public class UserController {
           String password = requestBody.get("password");
 
 
-          boolean isLoggedIn = userService.login(username, password);
+          boolean isLoggedIn = userServiceImpl.login(username, password);
           if (isLoggedIn) {
                // Successful login, return appropriate response
                return ResponseEntity.ok("Login successful");
