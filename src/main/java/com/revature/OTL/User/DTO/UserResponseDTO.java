@@ -14,12 +14,5 @@ public class UserResponseDTO {
      private String username;
      private String password;
      private String email;
-
-     public UserResponseDTO(User user) {
-        this.userId = user.getId();
-        this.username = user.getUsername();
-        this.password = user.getPassword();
-        this.email = user.getEmail();
-    }
      
 }
