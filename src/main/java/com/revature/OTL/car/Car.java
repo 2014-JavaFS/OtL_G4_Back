@@ -1,6 +1,7 @@
 package com.revature.OTL.car;
 
 import com.revature.OTL.User.User;
+import com.revature.OTL.enums.Condition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,5 +33,3 @@ public class Car {
 }
 
 
-    enum Condition {
-}

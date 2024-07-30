@@ -2,6 +2,7 @@ package com.revature.OTL.car.dto;
 
 import com.revature.OTL.User.User;
 import com.revature.OTL.car.Car;
+import com.revature.OTL.enums.Condition;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
