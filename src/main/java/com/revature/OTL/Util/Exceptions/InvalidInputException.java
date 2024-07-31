@@ -1,4 +1,4 @@
-package com.revature.OTL.Util.Exceptions;
+package com.revature.otl.Util.Exceptions;
 
 public class InvalidInputException extends RuntimeException{
     public InvalidInputException(String message){

@@ -1,6 +1,6 @@
-package com.revature.OTL.User.DTO;
+package com.revature.otl.user.DTO;
 
-import com.revature.OTL.User.User;
+import com.revature.otl.user.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

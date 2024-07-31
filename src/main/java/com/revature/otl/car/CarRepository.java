@@ -1,4 +1,4 @@
-package com.revature.OTL.car;
+package com.revature.otl.car;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

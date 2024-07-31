@@ -1,4 +1,4 @@
-package com.revature.OTL;
+package com.revature.otl;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

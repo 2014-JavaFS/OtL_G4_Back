@@ -1,16 +1,14 @@
-package com.revature.OTL.car.impl;
+package com.revature.otl.car.impl;
 
-import com.revature.OTL.car.Car;
-import com.revature.OTL.car.CarRepository;
-import com.revature.OTL.car.CarService;
-import com.revature.OTL.car.dto.CarRequestDto;
-import com.revature.OTL.util.DataNotFoundException;
+import com.revature.otl.car.Car;
+import com.revature.otl.car.CarRepository;
+import com.revature.otl.car.CarService;
+import com.revature.otl.car.dto.CarRequestDto;
+import com.revature.otl.util.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataLocationNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service

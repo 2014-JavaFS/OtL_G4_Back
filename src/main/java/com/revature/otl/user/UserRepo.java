@@ -1,4 +1,4 @@
-package com.revature.OTL.User;
+package com.revature.otl.user;
 
 import java.util.Optional;
 
@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Integer> {
-     @Query("FROM users WHERE b.user.username = :username")
+
      Optional<User> findByUsername(String username);
      @Query("FROM users WHERE username = :username AND password = :password")
      Optional<User> authCheck(String username, String password);
+
 }

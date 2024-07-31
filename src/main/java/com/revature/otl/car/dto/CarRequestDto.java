@@ -1,8 +1,8 @@
-package com.revature.OTL.car.dto;
+package com.revature.otl.car.dto;
 
-import com.revature.OTL.User.User;
-import com.revature.OTL.car.Car;
-import com.revature.OTL.enums.Condition;
+import com.revature.otl.user.User;
+import com.revature.otl.car.Car;
+import com.revature.otl.enums.Condition;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

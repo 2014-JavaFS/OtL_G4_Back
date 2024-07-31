@@ -1,4 +1,4 @@
-package com.revature.OTL.User.DTO;
+package com.revature.otl.user.DTO;
 
 public class UserRequestDTO {
      

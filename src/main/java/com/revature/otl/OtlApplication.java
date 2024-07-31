@@ -1,4 +1,4 @@
-package com.revature.OTL;
+package com.revature.otl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,9 +1,8 @@
-package com.revature.OTL.car;
+package com.revature.otl.car;
 
-import com.revature.OTL.car.dto.CarRequestDto;
+import com.revature.otl.car.dto.CarRequestDto;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface CarService {
 

@@ -1,7 +1,7 @@
-package com.revature.OTL.car;
+package com.revature.otl.car;
 
-import com.revature.OTL.User.User;
-import com.revature.OTL.enums.Condition;
+import com.revature.otl.user.User;
+import com.revature.otl.enums.Condition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,7 +25,6 @@ public class Car {
     private int year;
     private String trim;
     private double price;
-    private User seller;
     private String description;
 
     @Enumerated(EnumType.STRING)

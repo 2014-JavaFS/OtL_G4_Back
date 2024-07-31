@@ -1,4 +1,4 @@
-package com.revature.OTL.enums;
+package com.revature.otl.enums;
 
 public enum Condition {
     BRAND_NEW,
