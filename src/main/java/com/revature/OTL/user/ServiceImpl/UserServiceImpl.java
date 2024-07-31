@@ -1,4 +1,4 @@
-package com.revature.otl.user.ServiceImpl;
+package com.revature.OTL.user.ServiceImpl;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.revature.otl.user.DTO.UserRequestDTO;
-import com.revature.otl.user.User;
-import com.revature.otl.user.UserRepo;
-import com.revature.otl.user.UserService;
+import com.revature.OTL.user.DTO.UserRequestDTO;
+import com.revature.OTL.user.User;
+import com.revature.OTL.user.UserRepo;
+import com.revature.OTL.user.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{

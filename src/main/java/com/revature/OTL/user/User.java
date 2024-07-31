@@ -1,8 +1,7 @@
-package com.revature.otl.user;
+package com.revature.OTL.user;
 
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
     @Id

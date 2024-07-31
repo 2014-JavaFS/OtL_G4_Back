@@ -1,6 +1,6 @@
-package com.revature.otl.car;
+package com.revature.OTL.car;
 
-import com.revature.otl.car.dto.CarRequestDto;
+import com.revature.OTL.car.dto.CarRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

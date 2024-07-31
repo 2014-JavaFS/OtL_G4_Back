@@ -1,10 +1,10 @@
-package com.revature.otl.user;
+package com.revature.OTL.user;
 
 
 import java.util.List;
 import java.util.Optional;
 
-import com.revature.otl.user.DTO.UserRequestDTO;
+import com.revature.OTL.user.DTO.UserRequestDTO;
 public interface UserService {
      boolean login(String username, String password);
      Optional<User> getUserByUsername(String username);

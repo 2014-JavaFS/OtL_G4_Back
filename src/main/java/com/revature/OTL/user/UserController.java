@@ -1,4 +1,4 @@
-package com.revature.otl.user;
+package com.revature.OTL.user;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.otl.user.ServiceImpl.UserServiceImpl;
+import com.revature.OTL.user.ServiceImpl.UserServiceImpl;
 
 import jakarta.validation.Valid;
 

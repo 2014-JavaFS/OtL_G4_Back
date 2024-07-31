@@ -1,4 +1,4 @@
-package com.revature.otl.util;
+package com.revature.OTL.util;
 
 public class DataNotFoundException extends RuntimeException{
 

@@ -1,9 +1,9 @@
-package com.revature.otl.user.Impl;
+package com.revature.OTL.user.Impl;
 
-import com.revature.otl.user.DTO.UserRequestDTO;
-import com.revature.otl.user.User;
-import com.revature.otl.user.UserRepo;
-import com.revature.otl.user.UserService;
+import com.revature.OTL.user.DTO.UserRequestDTO;
+import com.revature.OTL.user.User;
+import com.revature.OTL.user.UserRepo;
+import com.revature.OTL.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

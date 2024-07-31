@@ -1,7 +1,6 @@
-package com.revature.otl.car;
+package com.revature.OTL.car;
 
-import com.revature.otl.user.User;
-import com.revature.otl.enums.Condition;
+import com.revature.OTL.enums.Condition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
