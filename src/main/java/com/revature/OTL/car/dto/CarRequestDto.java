@@ -1,6 +1,6 @@
 package com.revature.OTL.car.dto;
 
-import com.revature.OTL.user.User;
+import com.revature.OTL.user.AppUser;
 import com.revature.OTL.car.Car;
 import com.revature.OTL.enums.Condition;
 import lombok.AllArgsConstructor;
@@ -20,7 +20,7 @@ public class CarRequestDto {
     private int year;
     private String trim;
     private double price;
-    private User seller;
+    private AppUser seller;
     private String description;
     private Condition condition;
 
