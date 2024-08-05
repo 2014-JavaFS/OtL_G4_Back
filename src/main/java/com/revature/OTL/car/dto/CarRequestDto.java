@@ -20,7 +20,6 @@ public class CarRequestDto {
     private int year;
     private String trim;
     private double price;
-    private AppUser seller;
     private String description;
     private Condition condition;
 
