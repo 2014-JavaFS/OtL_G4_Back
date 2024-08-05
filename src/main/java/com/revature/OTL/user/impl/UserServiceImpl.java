@@ -1,15 +1,16 @@
 package com.revature.OTL.user.impl;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.revature.OTL.user.AppUser;
 import com.revature.OTL.user.UserRepo;
 import com.revature.OTL.user.UserService;
 import com.revature.OTL.user.dto.UserRequestDTO;
-import com.revature.OTL.util.DataNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
+import com.revature.OTL.util.exceptions.DataNotFoundException;
 
 @Service
 public class UserServiceImpl implements UserService {
