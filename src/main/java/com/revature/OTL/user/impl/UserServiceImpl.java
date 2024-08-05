@@ -4,7 +4,8 @@ import com.revature.OTL.user.AppUser;
 import com.revature.OTL.user.UserRepo;
 import com.revature.OTL.user.UserService;
 import com.revature.OTL.user.dto.UserRequestDTO;
-import com.revature.OTL.util.DataNotFoundException;
+import com.revature.OTL.util.exceptions.DataNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,6 @@ import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
-
 
     UserRepo userRepo;
 
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AppUser getUserById(int id) {
-        AppUser appUser = userRepo.findById(id).orElseThrow(()->new DataNotFoundException("User not found"));
+        AppUser appUser = userRepo.findById(id).orElseThrow(() -> new DataNotFoundException("User not found"));
         return appUser;
     }
 
