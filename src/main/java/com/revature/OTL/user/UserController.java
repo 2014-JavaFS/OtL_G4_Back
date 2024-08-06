@@ -55,11 +55,4 @@ public class UserController {
      public ResponseEntity<AppUser> updateUser(@PathVariable int id, @RequestBody UserRequestDTO userRequestDTO){
           return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).body(userService.updateUser(id,userRequestDTO));
      }
-
-    private final UserService userService;
-
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
 }
