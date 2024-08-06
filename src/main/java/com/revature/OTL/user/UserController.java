@@ -13,46 +13,49 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-     private final UserService userService;
 
-     @Autowired
-     public UserController(UserService userService) {
-          this.userService = userService;
-     }
+    private final UserService userService;
 
-     /**
-      * g
-      * @param newAppUser
-      * @return ResponseEntity object, response status, and response body
-      */
-     @PostMapping("/register")
-     private ResponseEntity<AppUser> registerUser(@Valid @RequestBody AppUser newAppUser){
-          return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(newAppUser));
-     }
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
-     @PostMapping("/login")
-     public ResponseEntity<?> login(@RequestParam String username, @RequestParam String password) {
-          boolean isLoggedIn = userService.login(username, password);
-          if (isLoggedIn) {
-               // Successful login, return appropriate response
-               return ResponseEntity.ok("Login successful");
-          } else {
-               // Handle failed login, e.g., return error response
-               return ResponseEntity.status(401).body("Invalid credentials");
-          }
-     }
-     @GetMapping("/{id}")
-     public ResponseEntity<AppUser> findUserById(@PathVariable int id){
-         return ResponseEntity.ok(userService.getUserById(id));
-     }
+    /**
+     * g
+     *
+     * @param newAppUser
+     * @return ResponseEntity object, response status, and response body
+     */
+    @PostMapping("/register")
+    private ResponseEntity<AppUser> registerUser(@Valid @RequestBody AppUser newAppUser) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(newAppUser));
+    }
 
-     @GetMapping
-     public ResponseEntity<List<AppUser>> findAll(){
-          return ResponseEntity.status(HttpStatus.ACCEPTED).body(userService.getAllUsers());
-     }
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestParam String username, @RequestParam String password) {
+        boolean isLoggedIn = userService.login(username, password);
+        if (isLoggedIn) {
+            // Successful login, return appropriate response
+            return ResponseEntity.ok("Login successful");
+        } else {
+            // Handle failed login, e.g., return error response
+            return ResponseEntity.status(401).body("Invalid credentials");
+        }
+    }
 
-     @PutMapping("/{id}")
-     public ResponseEntity<AppUser> updateUser(@PathVariable int id, @RequestBody UserRequestDTO userRequestDTO){
-          return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).body(userService.updateUser(id,userRequestDTO));
-     }
+    @GetMapping("/{id}")
+    public ResponseEntity<AppUser> findUserById(@PathVariable int id) {
+        return ResponseEntity.ok(userService.getUserById(id));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<AppUser>> findAll() {
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(userService.getAllUsers());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<AppUser> updateUser(@PathVariable int id, @RequestBody UserRequestDTO userRequestDTO) {
+        return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).body(userService.updateUser(id, userRequestDTO));
+    }
 }

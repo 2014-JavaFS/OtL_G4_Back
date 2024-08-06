@@ -1,15 +1,14 @@
 package com.revature.OTL.car;
 
-import com.revature.OTL.car.dto.CarRequestDto;
-
 import java.util.List;
+
+import com.revature.OTL.car.dto.CarRequestDto;
 
 public interface CarService {
 
-
     Car create(CarRequestDto carRequestDto);
 
-    List<Car> getAllCars();
+    List<CarRequestDto> getAllCars();
 
     Car getCarById(int id);
 

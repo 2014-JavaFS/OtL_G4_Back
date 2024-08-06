@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AppUser updateUser(int id, UserRequestDTO userRequestDTO) {
-        AppUser appUser = userRepo.findById(id).orElseThrow(()->new DataNotFoundException("User not found " +id));
+        AppUser appUser = userRepo.findById(id).orElseThrow(() -> new DataNotFoundException("User not found " + id));
         appUser.setEmail(userRequestDTO.getEmail());
         appUser.setUsername(userRequestDTO.getUsername());
         appUser.setPassword(userRequestDTO.getPassword());
