@@ -1,6 +1,10 @@
 package com.revature.OTL.car;
 
+import java.util.List;
+
+import com.revature.OTL.cart.Cart;
 import com.revature.OTL.enums.Condition;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,6 +32,7 @@ public class Car {
 
     @Enumerated(EnumType.STRING)
     private Condition condition;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    private List<Cart> carts;
 }
-
-

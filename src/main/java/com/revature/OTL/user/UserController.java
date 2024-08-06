@@ -1,17 +1,14 @@
 package com.revature.OTL.user;
 
+import java.util.List;
+
 import com.revature.OTL.user.dto.UserRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.revature.OTL.user.impl.UserServiceImpl;
-
 import jakarta.validation.Valid;
-
-import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
@@ -58,6 +55,4 @@ public class UserController {
      public ResponseEntity<AppUser> updateUser(@PathVariable int id, @RequestBody UserRequestDTO userRequestDTO){
           return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).body(userService.updateUser(id,userRequestDTO));
      }
-
 }
-

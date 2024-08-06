@@ -15,7 +15,6 @@ import com.revature.OTL.util.exceptions.DataNotFoundException;
 @Service
 public class UserServiceImpl implements UserService {
 
-
     UserRepo userRepo;
 
     @Autowired
@@ -46,7 +45,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AppUser getUserById(int id) {
-        AppUser appUser = userRepo.findById(id).orElseThrow(()->new DataNotFoundException("User not found"));
+        AppUser appUser = userRepo.findById(id).orElseThrow(() -> new DataNotFoundException("User not found"));
         return appUser;
     }
 
