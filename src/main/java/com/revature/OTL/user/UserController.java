@@ -1,6 +1,6 @@
 package com.revature.OTL.user;
 
-import java.util.Map;
+import java.util.List;
 
 import com.revature.OTL.user.dto.UserRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
