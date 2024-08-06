@@ -2,6 +2,7 @@ package com.revature.OTL.cart;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.revature.OTL.car.Car;
 import com.revature.OTL.user.AppUser;
 
@@ -35,10 +36,12 @@ public class Cart {
 
     @ManyToOne
     @JoinColumn(name = "app_user_id", nullable = false)
+    @JsonBackReference
     private AppUser user;
 
     @ManyToOne
     @JoinColumn(name = "car_id", nullable = false)
+    @JsonBackReference
     private Car car;
 
     private String Description;

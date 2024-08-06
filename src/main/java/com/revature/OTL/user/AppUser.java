@@ -2,6 +2,7 @@ package com.revature.OTL.user;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.revature.OTL.cart.Cart;
 
 import jakarta.persistence.*;
@@ -30,5 +31,6 @@ public class AppUser {
     private String email;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Cart> carts;
 }

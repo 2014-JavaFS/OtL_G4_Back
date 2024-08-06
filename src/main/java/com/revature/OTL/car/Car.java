@@ -2,6 +2,7 @@ package com.revature.OTL.car;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.revature.OTL.cart.Cart;
 import com.revature.OTL.enums.Condition;
 
@@ -34,5 +35,6 @@ public class Car {
     private Condition condition;
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Cart> carts;
 }
