@@ -34,11 +34,11 @@ public class Cart {
     private LocalDateTime EstDel;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "app_user_id", nullable = false)
     private AppUser user;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "car_id", nullable = false)
     private Car car;
 
     private String Description;
