@@ -13,12 +13,6 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-import java.util.List;
-import java.util.Map;
-
-@RestController
-@RequestMapping("/users")
-public class UserController {
      private final UserService userService;
 
      @Autowired
