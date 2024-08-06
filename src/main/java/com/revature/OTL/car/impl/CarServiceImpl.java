@@ -41,7 +41,10 @@ public class CarServiceImpl implements CartService {
 
     @Override
     public Car updateCar(int id, CarRequestDto requestDto) {
-        return null;
+        int carId = carRepository.findById(id).orElseThrow(()->new DataNotFoundException("Cat not found")).getId();
+        Car car = CarRequestDto.dtoToEntity(requestDto);
+        car.setId(carId);
+        return carRepository.save(car);
     }
 
 }

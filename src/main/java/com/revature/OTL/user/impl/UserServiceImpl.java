@@ -1,16 +1,16 @@
 package com.revature.OTL.user.impl;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.revature.OTL.user.AppUser;
 import com.revature.OTL.user.UserRepo;
 import com.revature.OTL.user.UserService;
 import com.revature.OTL.user.dto.UserRequestDTO;
 import com.revature.OTL.util.exceptions.DataNotFoundException;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -51,7 +51,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public AppUser updateUser(int id, UserRequestDTO userRequestDTO) {
-        return null;
+        AppUser appUser = userRepo.findById(id).orElseThrow(()->new DataNotFoundException("User not found " +id));
+        appUser.setEmail(userRequestDTO.getEmail());
+        appUser.setUsername(userRequestDTO.getUsername());
+        appUser.setPassword(userRequestDTO.getPassword());
+        return userRepo.save(appUser);
     }
 
     @Override
