@@ -11,9 +11,9 @@ import com.revature.OTL.car.CarService;
 import com.revature.OTL.car.dto.CarRequestDto;
 import com.revature.OTL.util.exceptions.DataNotFoundException;
 
-public class CarServiceImpl implements CartService {
+public class CarServiceImpl implements CarService {
 
-    private final CartRepository carRepository;
+    private final CarRepository carRepository;
 
     @Autowired
     public CarServiceImpl(CarRepository carRepository) {
