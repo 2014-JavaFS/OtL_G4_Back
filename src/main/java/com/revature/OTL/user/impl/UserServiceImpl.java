@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean login(String username, String password) {
-        Optional<AppUser> userOptional = userRepo.findByUsername(username);
+        Optional<AppUser> userOptional = userRepo.findByUsernameAndPassword(username, password);
         return userOptional.isPresent();
     }
 
