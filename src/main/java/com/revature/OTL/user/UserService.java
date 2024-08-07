@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface UserService {
      boolean login(String username, String password);
      Optional<AppUser> getUserByUsername(String username);
-     AppUser registerUser(AppUser newAppUser);
+     AppUser registerUser(UserRequestDTO userRequestDTO);
      List<AppUser> getAllUsers();
      AppUser getUserById(int id);
      AppUser updateUser(int id, UserRequestDTO userRequestDTO);

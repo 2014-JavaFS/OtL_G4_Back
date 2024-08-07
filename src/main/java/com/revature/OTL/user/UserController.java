@@ -27,8 +27,8 @@ public class UserController {
       * @return ResponseEntity object, response status, and response body
       */
      @PostMapping("/register")
-     private ResponseEntity<AppUser> registerUser(@Valid @RequestBody AppUser newAppUser){
-          return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(newAppUser));
+     private ResponseEntity<AppUser> registerUser(@Valid @RequestBody UserRequestDTO userRequestDTO){
+          return ResponseEntity.status(HttpStatus.CREATED).body(userService.registerUser(userRequestDTO));
      }
 
      @PostMapping("/login")

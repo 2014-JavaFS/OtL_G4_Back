@@ -34,8 +34,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public AppUser registerUser(AppUser newAppUser) {
-        return userRepo.save(newAppUser);
+    public AppUser registerUser(UserRequestDTO userRequestDTO) {
+        AppUser user = AppUser.fromDTO(userRequestDTO);
+        return userRepo.save(user);
     }
 
     @Override
